@@ -8,7 +8,7 @@
     let loading = true;
     onMount(async () => {
         try {
-            const res = await fetch("http://localhost:5000/user");
+            const res = await fetch("https://sveltekit-backend-sigma.vercel.app/user");
             if (!res.ok) throw new Error("Failed to fetch data");
             const data = await res.json();
             persons = data; 
