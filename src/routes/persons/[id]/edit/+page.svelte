@@ -14,7 +14,7 @@
 
     onMount(async () => {
         try {
-            const res = await fetch(`http://localhost:5000/user`);
+            const res = await fetch(`https://sveltekit-backend-sigma.vercel.app/user`);
             if (!res.ok) throw new Error("Failed to fetch person");
             const data = await res.json();
             person = data.find((user) => user._id === id);
@@ -35,7 +35,7 @@
         const updatedData = { name, email, phone, address };
 
         try {
-            const res = await fetch(`http://localhost:5000/user/${id}`, {
+            const res = await fetch(`https://sveltekit-backend-sigma.vercel.app/user/${id}`, {
                 method: "PATCH",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(updatedData),
