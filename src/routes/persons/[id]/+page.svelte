@@ -12,7 +12,7 @@
         console.log("Received ID from URL:", id);
 
         try {
-            const res = await fetch(`http://localhost:5000/user`);
+            const res = await fetch(`https://sveltekit-backend-sigma.vercel.app/user`);
             if (!res.ok) throw new Error("Failed to fetch person");
 
             const data = await res.json();
@@ -27,7 +27,7 @@
         console.log(id);
 
         try {
-            const res = await fetch(`http://localhost:5000/user/${id}`, {
+            const res = await fetch(`https://sveltekit-backend-sigma.vercel.app/user/${id}`, {
                 method: "DELETE",
             });
             if (res.ok) {
